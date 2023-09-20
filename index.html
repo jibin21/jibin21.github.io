@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Users / Profile - NiceAdmin Bootstrap Template</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  
+  <!-- Include Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+ 
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+<style>   /* Set the right-side column to fill the screen height */
+ .draftbtn{padding: 0px 10px 0px 10px;}
+ .right-side {
+      height: 100vh;
+      overflow-y: auto; /* Enable vertical scrolling if content overflows */
+  }
+  
+  /* Style the user input section */
+  .user-input {
+      background-color: white;
+      padding: 10px;
+      border-top: 1px solid #ccc;
+  }
+
+  /* Style the chat container */
+  .chat-container-container{
+      
+      height: 90%;
+
+}
+.card:hover {
+      background-color: #f5f5f5; /* Change background color on hover */
+      transition: background-color 0.2s;
+  }
+
+  .card.selected {
+      background-color: #007bff !important; /* Selected card background color */
+      color: #fff; /* Selected card text color */
+  }
+.card:active {
+      background-color: #007bff !important; /* Selected card background color */
+      color: #fff; /* Selected card text color */
+  }
+.nopadding {
+padding: 0 !important;
+margin: 0 !important;
+}
+.custom-button {
+      background: transparent;
+      border: none;
+      text-decoration: none;
+      padding: 0;
+      cursor: pointer;
+      color: #333; /* Text color */
+      transition: color 0.2s, background-color 0.2s;
+      outline: none;
+  }
+
+  .custom-button:hover {
+      color: #fff; /* Text color on hover */
+      
+text-decoration: none !important;
+  }
+/* Style the chat-container to fill the remaining space */
+.chat-container {
+background-color: #eaf1fb; /* Updated background color */
+padding: 10px;
+border-radius: 15px; /* Rounded corners */
+margin-bottom: 10px;
+height: 83vh;
+display: flex;
+flex-direction: column;
+overflow: hidden;
+}
+
+  /* Style the user and settings icons */
+  .user-icon {
+      margin-right: 15px;
+      font-size: 24px;
+      color: #000000;
+  }
+
+  .settings-icon {
+      font-size: 24px;
+      color: #000000;
+  }
+
+  /* Style the menu items with icons */
+  .menu-item {
+      display: flex;
+      align-items: center;
+  }
+
+  .menu-item i {
+      margin-right: 10px;
+  }
+
+  .menu-item a {
+      text-decoration: none; /* Remove underlines from links */
+      color: black; /* Set link color to black */
+  }
+/* Style for the microphone icon */
+.microphone-icon {
+position: absolute;
+right: 20px; /* Adjust as needed for your layout */
+top: 50%;
+transform: translateY(-50%);
+cursor: pointer;
+background-color: transparent; /* Remove background color */
+border: none; /* Remove border */
+}
+ 
+
+  /* Style the oval user-input field */
+  .input-group.input-group-oval {
+      border-radius: 50px;
+  }
+
+ 
+
+  /* Style the submit button */
+  .submit-button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-size: 14px;
+      cursor: pointer;
+      padding: 8px 20px;
+  }
+
+  /* Style the logo with black background */
+  .logo {
+      background-color: black;
+      padding: 10px;
+      text-align: center;
+      
+  }
+
+  .logo img {
+      max-width: 100%;
+      height: auto;
+  }
+        
+
+  /* Style for the menu row */
+  .menu-row {
+      background-color: #ffffff;
+      padding: 10px;
+      position: sticky;
+      top: 0;
+  }
+
+  /* Style for the chat message row */
+  .chat-message-row {
+      background-color: #ffffff;
+      padding: 10px;
+  }
+
+  /* Style for the user input row */
+  .user-input-row {
+      
+      padding: 10px;
+      position: sticky;
+      bottom: 0;
+     
+  }
+/* Style the send button image */
+.send-button-image {
+background-color: transparent;
+border: none;
+cursor: pointer;
+padding: 0; /* Remove padding to fit the image size */
+}
+
+/* Style the send button image on hover if needed */
+.send-button-image:hover {
+/* Add hover styles here */
+}
+  /* Style for the user input field */
+  .user-input-field {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 50px;
+     
+  }
+  .moreInfo-button {
+background-color: #edf2fa; /* Background color */
+border-color: #7bb1ec; /* Border color */
+color: #0a5cb5; /* Text color */
+margin: 2px;
+font-weight: bold; 
+}
+  /* Style for the send button */
+  .NewTopic-button {
+      padding: 5px 15px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+  }
+   /* Style the menu toggle button */
+   .menu-toggle {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+      display: none; /* Initially hide the menu toggle button */
+  }
+  .full-width-div {
+position: absolute;
+width: 100%;
+left: 0;}
+.chat-content-area {
+overflow: auto;
+height: 100vh;
+overflow-x: hidden;
+}
+.user-chat-box {
+padding: 20px;
+padding-left: 50px;
+color: #060000;
+}
+.chat-icon { 
+margin: 0;
+padding: 0;
+}
+.chatgpt-icon {
+width: 30px;
+}
+.col-chat-left {
+    flex: 0 0 auto;
+    width: 50px;
+}
+.chat-txt {
+
+margin: 0;
+padding: 10px;
+text-align: justify;
+}
+.chatgpt-icon a {
+display: inline-block; /* Ensure the anchor element takes up the space */
+padding: 5px; /* Add padding to create some space around the image */
+border-radius: 50%; /* Rounded border */
+transition: background-color 0.2s; /* Smooth transition for background color */
+}
+.chatgpt-icon a:hover {
+background-color: #c9cbcd; /* Change background color on hover */
+transition: background-color 0.2s; /* Smooth transition on hover */
+}
+.gpt-chat-box {
+background-color: #ffffff; /* Updated background color */
+padding: 10px;
+border-radius: 15px; /* Rounded corners */
+margin-bottom: 10px;    
+display: flex;
+flex-direction: row;
+padding-left: 20px;
+margin-left: 15px;
+margin-right: 15px;
+}
+
+
+  /* Media query for showing menu toggle button on smaller screens */
+  @media (max-width: 768px) {
+      .menu-toggle {
+          display: block; /* Show the menu toggle button */
+      }
+      
+      .menu-item {
+          display: none; /* Hide menu items by default on smaller screens */
+      }
+
+      .menu-visible .menu-item {
+          display: flex; /* Show menu items when menu is toggled */
+      }
+  }
+  @keyframes loading {
+0% {
+  transform: translateX(-10px);
+}
+50% {
+  transform: translateX(10px);
+}
+100% {
+  transform: translateX(-10px);
+}
+}
+/* Animation effect on click */
+@keyframes buttonClick {
+0% {
+  transform: scale(1);
+}
+50% {
+  transform: scale(1.2);
+}
+100% {
+  transform: scale(1);
+}
+}
+.small-card{border-radius: 20px;
+font-size: 12px; /* Set the font size to 14 pixels */
+margin-left: 10px;
+  }
+.collapsible-card {
+position: relative;
+display: flex;
+flex-direction: column;
+min-width: 0; 
+height: $card-height;
+word-wrap: break-word;
+background-color: $card-bg;
+background-clip: border-box;}
+/* Highlight the clicked button */
+.button-clicked {
+background-color: #7bb1ec;
+color: white;
+animation: buttonClick 0.3s linear;
+}
+  .col-md-3point5 {width: 28.75%}
+.col-md-8point5 {width: 81.25%;}
+/* Style for tooltips */
+    /* Tooltip styles */
+  .custom-tooltip {
+      position: relative;
+      display: inline-block;
+      padding: 2px;
+
+  }
+  
+  .custom-tooltip .custom-tooltiptext {
+      visibility: hidden;
+      background-color: #214c7c;
+      color: #fff;
+      text-align: center;
+      border-radius: 50px;
+      padding: 0px 10px 0px 10px;
+      position: absolute;
+      z-index: 1;
+      top: 115%; /* Position below the button */
+      left: 50%;
+      transform: translateX(-50%); /* Center horizontally */
+      opacity: 0;
+      transition: opacity 0.2s;
+      white-space: nowrap; /* Prevent text from wrapping */
+font-size: 14px; /* Set the font size to 14 pixels */
+  }
+
+
+  .custom-tooltip:hover .custom-tooltiptext {
+      visibility: visible;
+      opacity: 1;
+  }
+
+.thumbs-up-button,
+.thumbs-down-button {
+background-color: transparent;
+border: none;
+cursor: pointer;
+padding: 5px;
+font-size: 18px;
+margin-right: 10px;
+color: #7bb1ec; /* Default color */
+}
+
+.rounded-corners {
+  border-radius: 50px !important;
+}
+
+.transparent {
+  background-color: transparent;
+}
+
+.input-group-text {
+  border: none;
+}
+.btn-transparent {
+  background-color:transparent !important;
+  border-color:transparent !important;
+color: #000000 !important;
+
+}
+.btn-transparent:hover {
+  background-color: transparent !important;
+  border-color: transparent !important;
+color:  #007bff !important;
+}
+
+.input-group-text:hover {
+  cursor: pointer;
+  color: #007bff;
+}
+</style>
+  <!-- =======================================================
+  * Template Name: NiceAdmin
+  * Updated: Sep 18 2023 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets/img/logo.png" alt="">
+        <span class="d-none d-lg-block"></span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">       
+       
+     
+
+        <li class="nav-item dropdown">
+
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-grid-3x3-gap"></i>
+            
+          </a><!-- End Messages Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
+            <li class="dropdown-header">
+              You have 3 new messages
+              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="message-item">
+              <a href="#">
+                <img src="assets/img/messages-1.jpg" alt="" class="rounded-circle">
+                <div>
+                  <h4>Maria Hudson</h4>
+                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <p>4 hrs. ago</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="message-item">
+              <a href="#">
+                <img src="assets/img/messages-2.jpg" alt="" class="rounded-circle">
+                <div>
+                  <h4>Anna Nelson</h4>
+                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <p>6 hrs. ago</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="message-item">
+              <a href="#">
+                <img src="assets/img/messages-3.jpg" alt="" class="rounded-circle">
+                <div>
+                  <h4>David Muldon</h4>
+                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <p>8 hrs. ago</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="dropdown-footer">
+              <a href="#">Show all messages</a>
+            </li>
+
+          </ul><!-- End Messages Dropdown Items -->
+
+        </li><!-- End Messages Nav -->
+
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="assets/img/user-icon.png" alt="Profile" class="rounded-circle">
+            
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6>Alen Paul</h6>
+              <span>Web Designer</span>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                <i class="bi bi-person"></i>
+                <span>My Profile</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                <i class="bi bi-gear"></i>
+                <span>Account Settings</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                <i class="bi bi-question-circle"></i>
+                <span>Need Help?</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="#">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+              </a>
+            </li>
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" onclick="newChat();return false;" href="#">
+          <i class="bi bi-grid"></i>
+          <span>Reset chat</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+ 
+
+      <li class="nav-item">
+        <a class="nav-link " href="#"  >
+          <i class="bi bi-person"></i>
+          <span>Bard Activity</span>
+        </a>
+      </li><!-- End Profile Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#">
+          <i class="bi bi-question-circle"></i>
+          <span>F.A.Q</span>
+        </a>
+      </li><!-- End F.A.Q Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#">
+          <i class="bi bi-envelope"></i>
+          <span>Update</span>
+        </a>
+      </li><!-- End Contact Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="">
+          <i class="bi bi-card-list"></i>
+          <span>Register</span>
+        </a>
+      </li><!-- End Register Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#">
+          <i class="bi bi-box-arrow-in-right"></i>
+          <span>Help</span>
+        </a>
+      </li><!-- End Login Page Nav -->
+
+      
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+    <div class="chat-container">
+      <!-- Chat messages will go here -->
+      <div class="chat-content-area" id="chat-content-area">
+
+          <!-- START USER CHAT -->
+         
+      
+          <!-- START GPT CHAT -->
+          <div id="new-messages">
+          <div class="row gpt-chat-box"><div id="accordion" class="w-100"></div>
+          <div class="col-chat-left">
+              <img class="rounded-circle user-image chatgpt-icon" class="chatgpt-icon" src="assets/img/Ai-icon.gif" />
+            </div>
+            <div class="chat-txt col-md-11">
+              <br>
+              <h1>Hello again</h1>
+              <p>Tell me what’s on your mind, or pick a suggestion. I have limitations and won’t always get it right, but your feedback will help me improve.</p>
+      <div class="row">
+      <div class="card "style="width:250px; margin: 10px;" >
+          <div class="card-body" >
+            <h5 class="card-title">Card title</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Another link</a>
+            
+            </div>
+          </div>
+          <div class="card" style="width:250px; margin: 10px;">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <div class="list-group">
+                
+                <a href="#" class="list-group-item list-group-item-action">A second link item</a>
+                <a href="#" class="list-group-item list-group-item-action">A third link item</a>
+                <a href="#" class="list-group-item list-group-item-action">A fourth link item</a>
+              
+              </div>
+              
+              </div>
+            </div>
+            <div class="card" style="width:250px; margin: 10px;">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <ul class="nav flex-column">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Active</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                  </li>
+                 
+                </ul>
+                
+                </div>
+              </div>
+        </div>
+        
+      </div>
+      <div class="alert alert-primary" role="alert">
+        Human reviewers may process your Bard conversations for quality purposes. Don't enter sensitive info.
+        </div>
+      </div>
+      
+         
+      
+          <!-- START USER CHAT -->
+         
+          
+
+
+
+
+            
+          </div>
+          <div class="loading-message">
+              <span></span>
+              <div class="loading-dot"></div>
+          </div>
+        </div>
+        <div class="row user-input-row">
+      
+          <div class="col-12 position-relative">
+         
+            <div class="input-group mb-3">
+              <input type="text" class="form-control rounded-corners" id="user-input-field" placeholder="Ask a question..." aria-label="Ask  a question..." aria-describedby="button-addon2">
+              <i class="bi bi-mic input-group-text transparent"></i>
+              <button type="submit" title="submit" class="btn btn-primary btn-transparent rounded-corners input-group-append" onclick=" sendMessage()"  id="button-addon2">
+                <i class="bi bi-send"></i>
+              </button>
+            </div>
+              
+              
+          </div>
+          </div>
+          
+      </div>
+  </div>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      May display inaccurate or offensive information  <strong><span> &copy;Privacy Notice</span></strong>.
+    </div>
+   
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <!-- Include Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+ 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+
+    <script>
+       
+         // JavaScript function to toggle the left-side menu on mobile
+    
+        function newChat(){ $('#new-messages div').empty();
+     
+      
+       
+            const newMessagesContainer = document.getElementById("new-messages");
+        
+            // Create a new chat message element
+            const userMessage = document.createElement("div");
+            
+            
+            // Append the message element to the new-messages container
+            newMessagesContainer.appendChild(userMessage);
+        
+            // Clear the user input field
+            document.getElementById("user-input-field").value = "";
+        
+            // Simulate a bot response with a delay (you can replace this with your actual logic)
+            setTimeout(function () {
+                showLoadingMessage();
+                // Create a bot message element
+                const botMessage = document.createElement("div");
+                botMessage.classList.add("chat-message", "bot-message", "animate__fadeIn"); // Add CSS classes for animations
+                botMessage.innerHTML = `     <div class="row gpt-chat-box"><div id="accordion" class="w-100"></div>
+        <div class="col-chat-left">
+            <img class="rounded-circle user-image chatgpt-icon" class="chatgpt-icon" src="assets/img/Ai-icon.gif" />
+          </div>
+          <div class="chat-txt col-md-11">
+            <br>
+            <h1>Hello again</h1>
+            <p>Tell me what’s on your mind, or pick a suggestion. I have limitations and won’t always get it right, but your feedback will help me improve.</p>
+    <div class="row">
+    <div class="card "style="width:250px; margin: 10px;" >
+        <div class="card-body" >
+          <h5 class="card-title">Card title</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+          
+          </div>
+        </div>
+        <div class="card" style="width:250px; margin: 10px;">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <div class="list-group">
+              
+              <a href="#" class="list-group-item list-group-item-action">A second link item</a>
+              <a href="#" class="list-group-item list-group-item-action">A third link item</a>
+              <a href="#" class="list-group-item list-group-item-action">A fourth link item</a>
+            
+            </div>
+            
+            </div>
+          </div>
+          <div class="card" style="width:250px; margin: 10px;">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Active</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+               
+              </ul>
+              
+              </div>
+            </div>
+      </div>
+      
+    </div>
+    <div class="alert alert-primary" role="alert">
+      Human reviewers may process your Bard conversations for quality purposes. Don't enter sensitive info.
+      </div>
+    </div>`;
+                
+                // Append the bot message element to the new-messages container
+                newMessagesContainer.appendChild(botMessage);
+        
+                // Scroll to the bottom of the chat-content-area with smooth animation
+                document.getElementById("chat-content-area").scrollTo({
+                    top: newMessagesContainer.scrollHeight,
+                    behavior: "smooth"
+                });
+                hideLoadingMessage(); }, 1000); // Delay for simulating the bot response
+        }
+        function sendMessage() {
+          const element = document.getElementById("accordion");
+          
+         
+  element.remove();
+    const userInput = document.getElementById("user-input-field").value;
+    const newMessagesContainer = document.getElementById("new-messages");
+
+    // Create a new chat message element
+    const userMessage = document.createElement("div");
+    userMessage.classList.add("chat-message", "user-message");
+
+    userMessage.innerHTML = ` <div class="row user-chat-box">
+            <div class=" chat-icon col-chat-left">
+              <div >
+              <img class="rounded-circle user-image chatgpt-icon" src="assets/img/user-icon.png" /></div>
+            </div>
+            <div class="chat-txt col-md-11">${userInput}</div>
+                </div>`;
+    
+    // Append the message element to the new-messages container
+    newMessagesContainer.appendChild(userMessage);
+
+    // Clear the user input field
+    document.getElementById("user-input-field").value = "";
+
+    // Simulate a bot response with a delay (you can replace this with your actual logic)
+    setTimeout(function () {
+        showLoadingMessage();
+        // Create a bot message element
+        const botMessage = document.createElement("div");
+        botMessage.classList.add("chat-message", "bot-message", "animate__fadeIn"); // Add CSS classes for animations
+        botMessage.innerHTML = ` <div class="row gpt-chat-box">
+          <div id="accordion" class="w-100">
+                  <div class=".collapsible-card">
+                    <div  id="headingOne" class="col-md-12  text-right">                          
+     <div class="row"><div class="col-md-10"></div><div class="col-md-2">         
+<button type="button" class="btn btn-light collapsed draftbtn " data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+  View other drafts <i class="fas fa-caret-down ml-2"></i></button>
+</div> </div>    
+                     
+                    </div>
+                
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                      <div class="card-body">
+                      <div class="row"> <div class="card small-card" style="width: 18rem;">
+                          <div class="card-body ">
+                            <h5 class="card-title">Draft-1</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="card-link">Card link</a>
+                            <a href="#" class="card-link">Another link</a>
+                          </div>
+                        </div>
+                        <div class="card small-card" style="width: 18rem;">
+                          <div class="card-body ">
+                            <h5 class="card-title">Draft-2</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="card-link">Card link</a>
+                            <a href="#" class="card-link">Another link</a>
+                          </div>
+                        </div>
+                        <div class="card small-card" style="width: 18rem;">
+                          <div class="card-body ">
+                            <h5 class="card-title">Draft-3</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="card-link">Card link</a>
+                            <a href="#" class="card-link">Another link</a>
+                          </div>
+                        </div>
+                      </div> 
+                        
+                      
+                      </div>
+                    </div>
+                  </div></div>
+                  <div class="row">
+            <div class="col-chat-left">
+                    <img class="rounded-circle user-image chatgpt-icon" class="chatgpt-icon" src="assets/img/Ai-icon.gif" />
+                  </div>
+                  <div class="chat-txt col-md-11">
+                   <p> I am ChatGPT, a large language model developed by OpenAI. I am
+                    an artificial intelligence designed to process and generate
+                    human-like text based on the input provided to me. I am here to
+                    assist you with any questions or tasks you may have to the best
+                    of my abilities!</p>
+                    
+                    Chat GPT can be used in the classroom to help students develop skills like writing, reading comprehension, and vocabulary building. Teachers can use Chat GPT to help students develop these skills.
+                    <br> 
+                    <br> 
+                    <div class="mt-3"><strong>Learn more:</strong>
+                    <button type="button" class="btn btn-primary btn-sm moreInfo-button ">1. smallcase.com</button>
+                    <button type="button" class="btn btn-primary btn-sm moreInfo-button ">2. cnn.com</button>
+                    <button type="button" class="btn btn-primary btn-sm moreInfo-button ">3. cnn.com</button>
+                    <button type="button" class="btn btn-primary btn-sm moreInfo-button ">4. marketbeat.com</button>
+                    <button type="button" class="btn btn-primary btn-sm moreInfo-button ">+2 more</button>
+                    </div>
+                    <br>
+                    <div class="mt-3">
+                        <!-- Button with a thumbs-up icon -->
+                        <div class="custom-tooltip">
+            <button class="btn btn-sm btn-outline-primary mr-2">
+                <i class="fas fa-thumbs-up text-blue"></i>
+            </button>
+            <span class="custom-tooltiptext">Good response</span>
+</div>
+            <!-- Button with a thumbs-down icon -->
+            <div class="custom-tooltip">
+            <button class="btn btn-sm btn-outline-danger mr-2">
+                <i class="fas fa-thumbs-down text-blue"></i>
+            </button>
+            <span class="custom-tooltiptext">Bad response</span>
+</div>
+            <!-- Button with an upload icon -->
+            <div class="custom-tooltip">
+            <button class="btn btn-sm btn-outline-success mr-2">
+                <i class="fas fa-upload text-blue"></i>
+            </button>
+            <span class="custom-tooltiptext">Export to Docs</span>
+</div>
+            <div class="custom-tooltip">
+            <!-- Button with a Google logo and label 'Google It' -->
+            <a href="https://www.google.com" target="_blank" class="btn btn-sm btn-outline-secondary">
+                <img src="assets/img/google-logo.png" alt="Google Logo" class="google-logo" style="width: 25px; height: 25px;"/>
+                Google It
+            </a><span class="custom-tooltiptext">Related searches</span>
+</div>
+                    </div>
+                  </div>
+         
+                </div>`;
+        
+        // Append the bot message element to the new-messages container
+        newMessagesContainer.appendChild(botMessage);
+
+        // Scroll to the bottom of the chat-content-area with smooth animation
+        document.getElementById("chat-content-area").scrollTo({
+            top: newMessagesContainer.scrollHeight,
+            behavior: "smooth"
+        });
+        hideLoadingMessage(); }, 1000); // Delay for simulating the bot response
+}
+// Function to show the loading message
+function showLoadingMessage() {
+    const loadingMessage = document.querySelector(".loading-message");
+    loadingMessage.style.display = "block";
+}
+
+// Function to hide the loading message
+function hideLoadingMessage() {
+    const loadingMessage = document.querySelector(".loading-message");
+    loadingMessage.style.display = "none";
+}
+// Wait for the document to be ready
+$(document).ready(function () {
+    // Add a click event listener to the button
+    $("#showToastBtn").click(function () {
+      // Select the toast div and call the toast method to display it
+      $(".toast").toast("show");
+    });
+  });
+
+  const inputField = document.querySelector('#user-input-field');
+const osoButton = document.querySelector('#button-addon2');
+
+inputField.addEventListener('input', () => {
+  if (inputField.value.trim()) {
+    osoButton.disabled = false;
+  } else {
+    osoButton.disabled = true;
+  }
+});
+    </script>
+</body>
+
+</html>
