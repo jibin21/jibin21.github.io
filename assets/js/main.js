@@ -460,3 +460,13 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+const inputField = document.getElementById("user-input-field");
+
+// Add an event listener for the "keydown" event on the input field
+inputField.addEventListener("keydown", function (event) {
+    // Check if the pressed key is the Enter key (key code 13)
+    if (event.keyCode === 13) {
+       
+        sendMessage();
+    }
+});
