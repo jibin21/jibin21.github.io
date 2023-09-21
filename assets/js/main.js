@@ -248,7 +248,9 @@ function sendMessage() {
                     </div>                
                     <div id="collapseOne" class="collapse mt-2" aria-labelledby="headingOne" data-parent="#accordion">
                       <div class="card-body">
-                      <div class="row"> <div class="card small-card" style="width: 18rem;">
+                      <div class="row row-cols-1 row-cols-md-3 g-4">
+                      <div class="col"> 
+                      <div class="card small-card" >
                           <div class="card-body ">
                             <h5 class="card-title">Draft-1</h5>
                             <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
@@ -256,8 +258,9 @@ function sendMessage() {
                             <a href="#" class="card-link">Card link</a>
                             <a href="#" class="card-link">Another link</a>
                           </div>
-                        </div>
-                        <div class="card small-card" style="width: 18rem;">
+                        </div></div>
+                        <div class="col">
+                        <div class="card small-card" >
                           <div class="card-body ">
                             <h5 class="card-title">Draft-2</h5>
                             <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
@@ -265,8 +268,8 @@ function sendMessage() {
                             <a href="#" class="card-link">Card link</a>
                             <a href="#" class="card-link">Another link</a>
                           </div>
-                        </div>
-                        <div class="card small-card" style="width: 18rem;">
+                        </div></div><div class="col">
+                        <div class="card small-card" >
                           <div class="card-body ">
                             <h5 class="card-title">Draft-3</h5>
                             <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
@@ -275,7 +278,7 @@ function sendMessage() {
                             <a href="#" class="card-link">Another link</a>
                           </div>
                         </div>
-                      </div>                      
+                      </div> </div>                     
                                             </div>
                     </div>
                   </div></div>
