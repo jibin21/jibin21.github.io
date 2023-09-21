@@ -143,59 +143,62 @@ function newChat() {
     // Create a bot message element
     const botMessage = document.createElement("div");
     botMessage.classList.add("chat-message", "bot-message", "animate__fadeIn"); // Add CSS classes for animations
-    botMessage.innerHTML = `     <div class="row gpt-chat-box"><div id="accordion" class="w-100"></div>
-        <div class="col-chat-left">
-            <img class="rounded-circle user-image chatgpt-icon" class="chatgpt-icon" src="assets/img/Ai-icon.gif" />
-          </div>
-          <div class="chat-txt col-md-11">
-            <br>
-            <h1>Hello again</h1>
-            <p>Tell me what’s on your mind, or pick a suggestion. I have limitations and won’t always get it right, but your feedback will help me improve.</p>
-    <div class="row">
-    <div class="card "style="width:250px; margin: 10px;" >
-        <div class="card-body" >
-          <h5 class="card-title">Card title</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>          
-          </div>
-        </div>
-        <div class="card" style="width:250px; margin: 10px;">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <div class="list-group">              
-              <a href="#" class="list-group-item list-group-item-action">A second link item</a>
-              <a href="#" class="list-group-item list-group-item-action">A third link item</a>
-              <a href="#" class="list-group-item list-group-item-action">A fourth link item</a>            
-            </div>            
+    botMessage.innerHTML = `       <div>
+    <div class="row gpt-chat-box">
+      <div id="accordion" class="w-100"></div>
+      <div class="col-chat-left">
+        <img class="rounded-circle user-image chatgpt-icon" class="chatgpt-icon" src="assets/img/Ai-icon.gif" />
+      </div>
+      <div class="chat-txt col-md-11">
+        <br>
+        <h1>Hello again</h1>
+        <p>Tell me what’s on your mind, or pick a suggestion. I have limitations and won’t always get it right,
+          but your feedback will help me improve.</p>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+          <div class="card " >
+            <img src="assets/img/AI-Thump.png" class="m-1" style="width:100px" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">AI-Powered Skills Platform</h5>
+              <h6 class="card-subtitle mb-2 text-muted"> subtitle</h6>
+              <p class="card-text">Built on Open edX and generative AI, IBL powers NVIDIA, Tesla, Cisco, 
+                MIT, DoD, IBM, University of Illinois, Western Governors U, and NASA.</p>
+              <a href="#" class="card-link">Learn more</a>                     
+
+            </div>
+          </div></div>
+          <div class="col">
+          <div class="card" >
+            <div class="card-body">
+              <h5 class="card-title">AI Chat Model</h5>
+              <h6 class="card-subtitle mb-2 text-muted"> subtitle</h6>
+              <p> Predictive analytics, personalized learning, and virtual tutors</p>
+              <p class="card-text">Some quick example content Open edX and generative AI.</p>
+              <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action">A second link item</a>
+                <a href="#" class="list-group-item list-group-item-action">A third link item</a>
+                <a href="#" class="list-group-item list-group-item-action">A fourth link item</a>
+              </div>
+            </div>
+          </div></div>
+          <div class="col">
+          <div class="card" >
+            <div class="card-body">
+              <h5 class="card-title">IBL as a Learner</h5>
+              <h6 class="card-subtitle mb-2 text-muted"> subtitle</h6>
+              <p class="card-text">The IBL Platform is founded on the engagement principle that Open edX has followed to attract over 60 million learners and generate a thriving open-source community.</p>
+                <p>Track: engagement, performance, skills, financial and per learner data. Data download and notifications.</p>
+                <button type="button" class="btn btn-primary  btn-sm">Contact Us</button>
             </div>
           </div>
-          <div class="card" style="width:250px; margin: 10px;">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <ul class="nav flex-column">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Active</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
-                </li>               
-              </ul>              
-              </div>
-            </div> </div>      
-    </div>
-    <div class="alert alert-primary" role="alert">
-      Human reviewers may process your Bard conversations for quality purposes. Don't enter sensitive info.
+        </div>
+        </div>
       </div>
-    </div>`;
+      <div class="alert alert-primary" role="alert">
+        Human reviewers may process your Bard conversations for quality purposes. Don't enter sensitive info.
+      </div>
+    </div>
+  </div>`;
 
     // Append the bot message element to the new-messages container
     newMessagesContainer.appendChild(botMessage);
@@ -253,8 +256,8 @@ function sendMessage() {
                       <div class="card small-card" >
                           <div class="card-body ">
                             <h5 class="card-title">Draft-1</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <h6 class="card-subtitle mb-2 text-muted"> subtitle</h6>
+                            <p class="card-text">Architecturally, the platform relies on Apache Kafka connectors that accept events from an unbounded set of sources, in addition to REST APIs.</p>
                             <a href="#" class="card-link">Card link</a>
                             <a href="#" class="card-link">Another link</a>
                           </div>
@@ -263,8 +266,8 @@ function sendMessage() {
                         <div class="card small-card" >
                           <div class="card-body ">
                             <h5 class="card-title">Draft-2</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <h6 class="card-subtitle mb-2 text-muted"> subtitle</h6>
+                            <p class="card-text">SAI-driven learning analytics platform built on Apache Kafka serving the largest Fortune 50, academic and government organizations.</p>
                             <a href="#" class="card-link">Card link</a>
                             <a href="#" class="card-link">Another link</a>
                           </div>
@@ -272,8 +275,8 @@ function sendMessage() {
                         <div class="card small-card" >
                           <div class="card-body ">
                             <h5 class="card-title">Draft-3</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <h6 class="card-subtitle mb-2 text-muted"> subtitle</h6>
+                            <p class="card-text">AI-Enabled Learning: predictive analytics and a modular, extensible architecture built on large-language models (LLMs).</p>
                             <a href="#" class="card-link">Card link</a>
                             <a href="#" class="card-link">Another link</a>
                           </div>
@@ -287,7 +290,7 @@ function sendMessage() {
                     <img class="rounded-circle user-image chatgpt-icon" class="chatgpt-icon" src="assets/img/Ai-icon.gif" />
                   </div>
                   <div class="chat-txt col-md-11">
-                   <p> I am ChatGPT, a large language model developed by OpenAI. I am
+                   <p> I am ibl-AI, a large language model developed by OpenAI. I am
                     an artificial intelligence designed to process and generate
                     human-like text based on the input provided to me. I am here to
                     assist you with any questions or tasks you may have to the best
