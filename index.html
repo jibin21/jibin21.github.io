@@ -5,15 +5,13 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Users / Profile - NiceAdmin Bootstrap Template</title>
+  <title>ibleducation</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Include Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -28,298 +26,7 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-  <style>
-    /* Set the right-side column to fill the screen height */
-    .draftbtn {
-      padding: 0px 10px 0px 10px;
-    }
-
-    /* Style the user input section */
-    .user-input {
-      background-color: white;
-      padding: 10px;
-      border-top: 1px solid #ccc;
-    }
-
-    .card:hover {
-      background-color: #f5f5f5;
-      /* Change background color on hover */
-      transition: background-color 0.2s;
-    }
-
-    .card.selected {
-      background-color: #007bff !important;
-      /* Selected card background color */
-      color: #fff;
-      /* Selected card text color */
-    }
-
-    .card:active {
-      background-color: #007bff !important;
-      /* Selected card background color */
-      color: #fff;
-      /* Selected card text color */
-    }
-
-    /* Style the chat-container to fill the remaining space */
-    .chat-container {
-      background-color: #eaf1fb;
-      /* Updated background color */
-      padding: 10px;
-      border-radius: 15px;
-      /* Rounded corners */
-      margin-bottom: 10px;
-      height: 83vh;
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-    }
-
-
-
-    /* Style the logo with black background */
-    .logo {
-      background-color: black;
-      padding: 10px;
-      text-align: center;
-
-    }
-
-    .logo img {
-      max-width: 100%;
-      height: auto;
-    }
-
-    /* Style for the user input field */
-    .user-input-field {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 50px;
-
-    }
-
-    .moreInfo-button {
-      background-color: #edf2fa;
-      /* Background color */
-      border-color: #7bb1ec;
-      /* Border color */
-      color: #0a5cb5;
-      /* Text color */
-      margin: 2px;
-      font-weight: bold;
-    }
-
-
-
-    .full-width-div {
-      position: absolute;
-      width: 100%;
-      left: 0;
-    }
-
-    .chat-content-area {
-      overflow: auto;
-      height: 100vh;
-      overflow-x: hidden;
-    }
-
-    .user-chat-box {
-      padding: 20px;
-      padding-left: 50px;
-      color: #060000;
-    }
-
-    .chat-icon {
-      margin: 0;
-      padding: 0;
-    }
-
-    .chatgpt-icon {
-      width: 30px;
-    }
-
-    .col-chat-left {
-      flex: 0 0 auto;
-      width: 50px;
-    }
-
-    .chat-txt {
-
-      margin: 0;
-      padding: 10px;
-      text-align: justify;
-    }
-
-    .chatgpt-icon a {
-      display: inline-block;
-      /* Ensure the anchor element takes up the space */
-      padding: 5px;
-      /* Add padding to create some space around the image */
-      border-radius: 50%;
-      /* Rounded border */
-      transition: background-color 0.2s;
-      /* Smooth transition for background color */
-    }
-
-    .chatgpt-icon a:hover {
-      background-color: #c9cbcd;
-      /* Change background color on hover */
-      transition: background-color 0.2s;
-      /* Smooth transition on hover */
-    }
-
-    .gpt-chat-box {
-      background-color: #ffffff;
-      /* Updated background color */
-      padding: 10px;
-      border-radius: 15px;
-      /* Rounded corners */
-      margin-bottom: 10px;
-      display: flex;
-      flex-direction: row;
-      padding-left: 20px;
-      margin-left: 15px;
-      margin-right: 15px;
-    }
-
-
-
-    @keyframes loading {
-      0% {
-        transform: translateX(-10px);
-      }
-
-      50% {
-        transform: translateX(10px);
-      }
-
-      100% {
-        transform: translateX(-10px);
-      }
-    }
-
-    /* Animation effect on click */
-    @keyframes buttonClick {
-      0% {
-        transform: scale(1);
-      }
-
-      50% {
-        transform: scale(1.2);
-      }
-
-      100% {
-        transform: scale(1);
-      }
-    }
-
-    .small-card {
-      border-radius: 20px;
-      font-size: 12px;
-      /* Set the font size to 14 pixels */
-      margin-left: 10px;
-    }
-
-    .collapsible-card {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      min-width: 0;
-      height: $card-height;
-      word-wrap: break-word;
-      background-color: $card-bg;
-      background-clip: border-box;
-    }
-
-
-
-    .col-md-3point5 {
-      width: 28.75%
-    }
-
-    .col-md-8point5 {
-      width: 81.25%;
-    }
-
-    /* Style for tooltips */
-    .custom-tooltip {
-      position: relative;
-      display: inline-block;
-      padding: 2px;
-
-    }
-
-    .custom-tooltip .custom-tooltiptext {
-      visibility: hidden;
-      background-color: #214c7c;
-      color: #fff;
-      text-align: center;
-      border-radius: 50px;
-      padding: 0px 10px 0px 10px;
-      position: absolute;
-      z-index: 1;
-      top: 115%;
-      /* Position below the button */
-      left: 50%;
-      transform: translateX(-50%);
-      /* Center horizontally */
-      opacity: 0;
-      transition: opacity 0.2s;
-      white-space: nowrap;
-      /* Prevent text from wrapping */
-      font-size: 14px;
-      /* Set the font size to 14 pixels */
-    }
-
-
-    .custom-tooltip:hover .custom-tooltiptext {
-      visibility: visible;
-      opacity: 1;
-    }
-
-    .thumbs-up-button,
-    .thumbs-down-button {
-      background-color: transparent;
-      border: none;
-      cursor: pointer;
-      padding: 5px;
-      font-size: 18px;
-      margin-right: 10px;
-      color: #7bb1ec;
-      /* Default color */
-    }
-
-    .rounded-corners {
-      border-radius: 50px !important;
-    }
-
-    .transparent {
-      background-color: transparent !important;
-    }
-
-    .input-group-text {
-      border: none;
-    }
-
-    .btn-transparent {
-      background-color: transparent !important;
-      border-color: transparent !important;
-      color: #000000 !important;
-
-    }
-
-    .btn-transparent:hover {
-      background-color: transparent !important;
-      border-color: transparent !important;
-      color: #007bff !important;
-    }
-
-    .input-group-text:hover {
-      cursor: pointer;
-      color: #007bff;
-    }
-  </style>
+ 
 
 </head>
 
@@ -462,18 +169,18 @@
     <ul class="sidebar-nav" id="sidebar-nav">
       <li class="nav-item">
         <a class="nav-link collapsed" onclick="newChat();return false;" href="#">
-          <i class="bi bi-grid"></i>
-          <span>Reset chat</span>
+          <i class="bi bi-plus-lg"></i>
+          <span>New chat</span>
         </a>
       </li>
-      <!-- End Dashboard Nav -->
+     
       <li class="nav-item">
         <a class="nav-link " href="#">
           <i class="bi bi-person"></i>
           <span>Bard Activity</span>
         </a>
       </li>
-      <!-- End Profile Page Nav -->
+     
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="#">
@@ -481,7 +188,7 @@
           <span>F.A.Q</span>
         </a>
       </li>
-      <!-- End F.A.Q Page Nav -->
+      
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="#">
@@ -489,7 +196,7 @@
           <span>Update</span>
         </a>
       </li>
-      <!-- End Contact Page Nav -->
+      
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="">
@@ -497,7 +204,7 @@
           <span>Register</span>
         </a>
       </li>
-      <!-- End Register Page Nav -->
+     
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="#">
@@ -505,8 +212,28 @@
           <span>Help</span>
         </a>
       </li>
-      <!-- End Login Page Nav -->
+     <!-- End Sidebar main Nav --> 
+      <li class="nav-heading">Recent</li>
 
+      <li class="nav-item ms-3">
+        <a class="nav-link collapsed fw-light" href="#">
+          <i class="bi bi-chat-text"></i>
+          <span>Applications of AI</span>
+        </a>
+      </li>
+      <li class="nav-item ms-3">
+        <a class="nav-link collapsed fw-light" href="#">
+          <i class="bi bi-chat-text"></i>
+          <span>Generation of Components</span>
+        </a>
+      </li>
+
+      <li class="nav-item ms-3">
+        <a class="nav-link collapsed fw-light" href="#">
+          <i class="bi bi-chat-text"></i>
+          <span>Chat history 3</span>
+        </a>
+      </li><!-- End Recent Nav -->
 
 
     </ul>
@@ -603,7 +330,7 @@
           </div>
         </div>
       </div>
-      <div class="row user-input-row">
+      <div class="row user-input-row" style="margin: 0px 15px 0px 15px;">
         <div class="col-12 position-relative p-1" style="height: 50px;">
           <div class="input-group mb-3" style="margin-top: 10px;">
             <div class="input-group">
