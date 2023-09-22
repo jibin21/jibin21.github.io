@@ -168,14 +168,14 @@
   <aside id="sidebar" class="sidebar">
     <ul class="sidebar-nav" id="sidebar-nav">
       <li class="nav-item">
-        <a class="nav-link collapsed" onclick="newChat();return false;" href="#">
+        <a class="nav-link " onclick="newChat();return false;" href="#">
           <i class="bi bi-plus-lg"></i>
           <span>New chat</span>
         </a>
       </li>
      
       <li class="nav-item">
-        <a class="nav-link " href="#">
+        <a class="nav-link collapsed" href="#">
           <i class="bi bi-person"></i>
           <span>Bard Activity</span>
         </a>
@@ -322,20 +322,26 @@
         </div>
       </div>
       <div class="row user-input-row" style="margin: 0px 15px 0px 15px;">
-        <div class="col-12 position-relative p-1" style="height: 50px;">
-          <div class="input-group mb-3" style="margin-top: 10px;">
-            <div class="input-group">
-              <input type="text" class="form-control rounded-corners" id="user-input-field"
-                placeholder="Ask a question..." aria-label="Ask a question..." aria-describedby="button-addon2">
-              <i class="bi bi-mic input-group-text transparent"></i>
-              <div class="input-group-append">
-                <button type="submit" title="submit" class="btn btn-primary btn-transparent rounded-corners"
-                  onclick="sendMessage()" id="button-addon2">
-                  <i class="bi bi-send"></i>
-                </button>
-              </div>
+        <div class="col-12 position-relative p-0" style="height: 65px;">      
+         <div class="container d-flex justify-content-center mt-3">
+            <div class="input-group col-sm-7  input-group-lg">
+                        <div class="input-group-prepend ">
+                          <span class="input-group-text NewIcon border border-secondary h-100 p-0"> <a class="text-white"  href="#">
+                            <i class="bi bi-plus-lg p-1 text-white "></i></a></span>
+                        </div>
+               <input type="text" class="form-control border border-secondary p-2" id="user-input-field"
+               placeholder="Ask a question..." aria-label="Ask a question..." aria-describedby="button-addon2">
+                        <div class="input-group-append ">
+                          <span class="input-group-text microphone border border-secondary h-100 p-1"><i class="bi bi-mic input-group-text transparent"></i></span>
+                        </div>
+             </div>          
+             <div class="input-group-append">
+              <button type="submit" title="submit" class="btn btn-primary btn-transparent rounded-corners p-2"
+                onclick="sendMessage()" id="button-addon2">
+                <i class="bi bi-send"></i>
+              </button>
             </div>
-          </div>
+       </div>
         </div>
       </div>
     </div>
